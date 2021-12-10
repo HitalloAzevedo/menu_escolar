@@ -43,3 +43,20 @@ def inteiro(n : float):
     
     else:
         return f'{n:.2f}'
+
+
+def resposta():
+    res = str(input('Deseja realizar calcular novamente? [S/N]: ')).lower().strip()
+    if res != '':
+        res = res[0]
+    
+    while res == '':
+        print('Opção inválida!')
+        res = str(input('Deseja realizar calcular novamente? [S/N]: ')).lower().strip()
+        while res not in 'sn':
+            print('Opção inválida!')
+            res = str(input('Deseja realizar calcular novamente? [S/N]: ')).lower().strip()
+            if res != '':
+                res = res[0]
+
+    return res
