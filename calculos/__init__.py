@@ -3,9 +3,12 @@ from interface import cabecalho, leiafloat, leiaint
 
 def PG():
     cabecalho('PROGRESSÃO GEOMÉTRICA')
+    
     a1 = leiafloat('Informe o primeiro termo: ')
     q = leiafloat('Informe a razão: ')
     qtd = leiaint('Até qual termo deseja visualizar?: ')
+
+    soma = 0
 
     for n in range(1, qtd + 1):
         tg = a1*q**(n-1)
@@ -14,8 +17,10 @@ def PG():
         else:
             tg = f'{tg:.2f}'
         print(tg, end=' -> ')
+        soma += tg
     
     print('Fim!')
+    print(f'A soma de todos os termos: {soma}')
 
 
 def PA():
