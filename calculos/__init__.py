@@ -54,7 +54,22 @@ def funcao_segundo():
 
 
 def fibonacci():
-    pass
+    qtd = leiaint('Quantos termos deseja ver?: ')
+    t1, t2 = 0, 1
+    if qtd == 0:
+        print('FIM!')
+    elif qtd == 1:
+        print('0 -> FIM!')
+    elif qtd == 2:
+        print('0 -> 1 -> FIM!')
+    else:
+        print(f'{t1} -> {t2}', end=' -> ')
+        for c in range(3, qtd+1):
+            t3 = t1 + t2
+            t1 = t2
+            t2 = t3
+            print(f'{t3}', end=' -> ')
+        print('FIM!')
 
 
 def logaritmo():
