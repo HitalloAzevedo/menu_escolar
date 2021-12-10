@@ -1,3 +1,5 @@
+import os
+
 def menu(*opcoes):
     c = 1
     for o in opcoes:
@@ -60,3 +62,8 @@ def resposta():
                 res = res[0]
 
     return res
+
+
+def limpar():
+    if os.name == 'nt':
+        os.system('cls')
