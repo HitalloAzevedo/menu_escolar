@@ -1,4 +1,3 @@
-from math import log
 from interface import *
 from calculos import *
 
