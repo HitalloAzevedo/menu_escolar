@@ -1,4 +1,5 @@
-from interface import cabecalho, leiafloat, leiaint
+from math import perm
+from interface import cabecalho, leiafloat, leiaint, inteiro
 
 
 def PG():
@@ -45,11 +46,38 @@ def PA():
     print(f'A soma de todos os termos: {soma}')
 
 
-def funcao_primeiro():
-    pass
-
-
 def funcao_segundo():
+    from math import sqrt
+
+    a = leiafloat('Informe o valor de (A): ')
+    b = leiafloat('Informe o valor de (C): ')
+    c = leiafloat('Informe o valor de (C): ')
+    inteiro(a)
+    inteiro(b)
+    inteiro(c)
+    
+    delta = b**2 - 4*a*c
+    
+    x1 = (-b+(sqrt(delta)))/2*a
+    x2 = (-b-(sqrt(delta)))/2*a
+
+    Xv = -b/(2*a)
+    Yv = -delta/(4*a)
+
+    if a > 0:
+        concavidade = 'para cima'
+    elif a < 0:
+        concavidade = 'para baixo'
+
+    print(f'Δ = {inteiro(delta)}')
+    print(f'Xi = {inteiro(x1)}')
+    print(f'Xii = {inteiro(x2)}')
+    print(f'Xv = {inteiro(Xv)}')
+    print(f'Yv = {inteiro(Yv)}')
+    print(f'Concavidade {concavidade}')
+
+
+def funcao_primeiro():
     pass
 
 

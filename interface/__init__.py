@@ -7,6 +7,7 @@ def menu(*opcoes):
     opcao = leiaint('Informe sua opção: ')
     return opcao
 
+
 def cabecalho(msg:str, tam=60, simb='='):
     print(simb * tam)
     print(msg.center(tam))
@@ -32,3 +33,11 @@ def leiafloat(msg):
         else:
             return valor
 
+
+def inteiro(n : float):
+    if n.is_integer():
+        n = int(n)
+        return n
+    
+    else:
+        return f'{n:.2f}'
