@@ -82,6 +82,8 @@ def funcao_segundo():
 
 
 def funcao_primeiro():
+    cabecalho('FUNÇÃO PRIMEIRO GRAU')
+
     a = leiafloat('Insira um valor para (A): ')
     x = leiafloat('Insira um valor para (X): ')
     b = leiafloat('Insira um valor para (B): ')
@@ -96,6 +98,8 @@ def funcao_primeiro():
 
 
 def fibonacci():
+    cabecalho('FIBONACCI')
+
     qtd = leiaint('Quantos termos deseja ver?: ')
     t1, t2 = 0, 1
     if qtd == 0:
@@ -117,6 +121,8 @@ def fibonacci():
 
 def logaritmo():
     from math import log
+    cabecalho('LOGARITMO')
+
     loga = leiafloat('Informe o valor do Log: ')
     base = leiafloat('Informe o valor da base (B): ')
     base = inteiro(base)
