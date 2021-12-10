@@ -78,7 +78,16 @@ def funcao_segundo():
 
 
 def funcao_primeiro():
-    pass
+    a = leiafloat('Insira um valor para (A): ')
+    x = leiafloat('Insira um valor para (X): ')
+    b = leiafloat('Insira um valor para (B): ')
+    inteiro(a)
+    inteiro(x)
+    inteiro(b)
+
+    y = (a*x)+b
+
+    print(f'O resultado é {inteiro(y)}')
 
 
 def fibonacci():
