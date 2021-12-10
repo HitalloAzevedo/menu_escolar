@@ -12,15 +12,11 @@ def PG():
 
     for n in range(1, qtd + 1):
         tg = a1*q**(n-1)
-        if tg.is_integer():
-            tg = int(tg)
-        else:
-            tg = f'{tg:.2f}'
-        print(tg, end=' -> ')
-        soma += tg
+        print(inteiro(tg), end=' -> ')
+        soma = soma + tg
     
     print('FIM!')
-    print(f'A soma de todos os termos: {soma}')
+    print(f'A soma de todos os termos: {inteiro(soma)}')
     print('=' * 60)
 
 
@@ -35,15 +31,11 @@ def PA():
 
     for n in range(1, qtd+1):
         tg = a1+(n-1)*q
-        if tg.is_integer():
-            tg = int(tg)
-        else:
-            tg = f'{tg:.2f}'
-        print(tg, end=' -> ')
-        soma += tg
+        print(inteiro(tg), end=' -> ')
+        soma = soma + tg
     
     print('FIM!')
-    print(f'A soma de todos os termos: {soma}')
+    print(f'A soma de todos os termos: {inteiro(soma)}')
     print('=' * 60)
 
 
@@ -53,16 +45,14 @@ def funcao_segundo():
     cabecalho('FUNÇÃO QUADRÁTICA')
 
     a = leiafloat('Informe o valor de (A): ')
-    b = leiafloat('Informe o valor de (C): ')
+    b = leiafloat('Informe o valor de (B): ')
     c = leiafloat('Informe o valor de (C): ')
-    inteiro(a)
-    inteiro(b)
-    inteiro(c)
-    
+
     delta = b**2 - 4*a*c
-    
-    x1 = (-b+(sqrt(delta)))/2*a
-    x2 = (-b-(sqrt(delta)))/2*a
+
+    if delta > 0:
+        x1 = (-b+(sqrt(delta)))/2*a
+        x2 = (-b-(sqrt(delta)))/2*a
 
     Xv = -b/(2*a)
     Yv = -delta/(4*a)
@@ -73,12 +63,13 @@ def funcao_segundo():
         concavidade = 'para baixo'
 
     print(f'Δ = {inteiro(delta)}')
-    print(f'Xi = {inteiro(x1)}')
-    print(f'Xii = {inteiro(x2)}')
+    if delta > 0:
+        print(f'Xi = {inteiro(x1)}')
+        print(f'Xii = {inteiro(x2)}')
     print(f'Xv = {inteiro(Xv)}')
     print(f'Yv = {inteiro(Yv)}')
     print(f'Concavidade {concavidade}')
-    print('= * 60')
+    print('=' * 60)
 
 
 def funcao_primeiro():
@@ -125,10 +116,8 @@ def logaritmo():
 
     loga = leiafloat('Informe o valor do Log: ')
     base = leiafloat('Informe o valor da base (B): ')
-    base = inteiro(base)
-    loga = inteiro(loga)
 
-    print(f'O log de {loga} na base {base} é: {inteiro(log(loga, base))}')
+    print(f'O log de {inteiro(loga)} na base {inteiro(base)} é: {inteiro(log(loga, base))}')
     print('=' * 60)
 
     

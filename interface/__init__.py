@@ -33,7 +33,7 @@ def leiafloat(msg):
         try:
             valor = float(input(msg))
         except (ValueError, TypeError):
-            print('Por favor insira um valor inteiro!') 
+            print('Por favor insira um valor válido!') 
         else:
             return valor
 
@@ -42,9 +42,10 @@ def inteiro(n : float):
     if n.is_integer():
         n = int(n)
         return n
-    
+   
     else:
-        return f'{n:.2f}'
+        n = f'{n:.2f}'
+        return n
 
 
 def resposta():
@@ -65,5 +66,8 @@ def resposta():
 
 
 def limpar():
-    if os.name == 'nt':
+    nome_so = os.name
+    if nome_so == 'nt':
         os.system('cls')
+    else:
+        os.system('clear')

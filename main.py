@@ -41,6 +41,7 @@ def main():
             while True:
                 r = resposta()
                 if r == 'n':
+                    limpar()
                     main()
                 else:
                     limpar()
@@ -52,6 +53,7 @@ def main():
             while True:
                 r = resposta()
                 if r == 'n':
+                    limpar()
                     main()
                 else:
                     limpar()
@@ -63,6 +65,7 @@ def main():
             while True:
                 r = resposta()
                 if r == 'n':
+                    limpar()
                     main()
                 else:
                     limpar()
@@ -74,6 +77,7 @@ def main():
             while True:
                 r = resposta()
                 if r == 'n':
+                    limpar()
                     main()
                 else:
                     limpar()
@@ -85,6 +89,7 @@ def main():
             while True:
                 r = resposta()
                 if r == 'n':
+                    limpar()
                     main()
                 else:
                     limpar()
