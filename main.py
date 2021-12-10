@@ -21,6 +21,7 @@ def main():
 
         if opcao == 99:
             print('Obrigado por usar!')
+            input('Pressione ENTER para sair!')
             exit()
 
         elif opcao == 1:
