@@ -1,8 +1,10 @@
 def menu(*opcoes):
     c = 1
     for o in opcoes:
-        print(f'{c} - {o}')
+        print(f'0{c} - {o}')
         c += 1
+    
+    print('99 - SAIR')
     
     opcao = leiaint('Informe sua opção: ')
     return opcao
