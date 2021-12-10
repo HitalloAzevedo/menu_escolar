@@ -1,4 +1,3 @@
-from math import perm
 from interface import cabecalho, leiafloat, leiaint, inteiro
 
 
@@ -22,6 +21,7 @@ def PG():
     
     print('FIM!')
     print(f'A soma de todos os termos: {soma}')
+    print('=' * 60)
 
 
 def PA():
@@ -44,10 +44,13 @@ def PA():
     
     print('FIM!')
     print(f'A soma de todos os termos: {soma}')
+    print('=' * 60)
 
 
 def funcao_segundo():
     from math import sqrt
+
+    cabecalho('FUNÇÃO QUADRÁTICA')
 
     a = leiafloat('Informe o valor de (A): ')
     b = leiafloat('Informe o valor de (C): ')
@@ -75,6 +78,7 @@ def funcao_segundo():
     print(f'Xv = {inteiro(Xv)}')
     print(f'Yv = {inteiro(Yv)}')
     print(f'Concavidade {concavidade}')
+    print('= * 60')
 
 
 def funcao_primeiro():
@@ -88,6 +92,7 @@ def funcao_primeiro():
     y = (a*x)+b
 
     print(f'O resultado é {inteiro(y)}')
+    print('=' * 60)
 
 
 def fibonacci():
@@ -107,7 +112,17 @@ def fibonacci():
             t2 = t3
             print(f'{t3}', end=' -> ')
         print('FIM!')
+    print('=' * 60)
 
 
 def logaritmo():
-    pass
+    from math import log
+    loga = leiafloat('Informe o valor do Log: ')
+    base = leiafloat('Informe o valor da base (B): ')
+    base = inteiro(base)
+    loga = inteiro(loga)
+
+    print(f'O log de {loga} na base {base} é: {inteiro(log(loga, base))}')
+    print('=' * 60)
+
+    
