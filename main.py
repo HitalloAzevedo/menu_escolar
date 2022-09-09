@@ -1,5 +1,6 @@
 from interface import *
 from calculos import *
+from sys import exit
 
 author = 'Hitallo Azevedo'
 version = 'v0.0.2'
