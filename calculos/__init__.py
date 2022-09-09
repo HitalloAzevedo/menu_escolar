@@ -120,4 +120,3 @@ def logaritmo():
     print(f'O log de {inteiro(loga)} na base {inteiro(base)} é: {inteiro(log(loga, base))}')
     print('=' * 60)
 
-    
