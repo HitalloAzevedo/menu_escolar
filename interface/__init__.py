@@ -1,73 +1,84 @@
 import os
+from typing import List
 
-def menu(*opcoes):
-    c = 1
-    for o in opcoes:
-        print(f'0{c} - {o}')
-        c += 1
+def menu(*options):
+    i = 1
+    for opt in options:
+        if opt == 'SAIR':
+            i = 99
+        print(f'{i}'.zfill(2) + ' - ' + f'{opt}')
+        i += 1
     
-    print('99 - SAIR')
-    
-    opcao = leiaint('Informe sua opção: ')
+    print('sua opção >>> ', end='')
+    opcao = getIntegerNumber()
     return opcao
 
+def drawHeader(content:str, tam=60, simb='=', clearTerminal=True):
+    if clearTerminal:
+        clear()
+    for line in content:
+        print(simb * tam)
+        print(line[1].center(tam) if line[0] == True else line[1])
+        print(simb * tam)
 
-def cabecalho(msg:str, tam=60, simb='='):
-    print(simb * tam)
-    print(msg.center(tam))
-    print(simb * tam)
-
-
-def leiaint(msg):
+def getIntegerNumber():
     while True:
         try:
-            valor = int(input(msg))
+            value = int(input())
+            return value
         except (ValueError, TypeError):
-            print('Por favor insira um valor inteiro!') 
-        else:
-            return valor
+            print('Insira um valor inteiro!') 
 
-
-def leiafloat(msg):
+def getRealNumber():
     while True:
         try:
-            valor = float(input(msg))
+            value = float(input())
+            return value
         except (ValueError, TypeError):
             print('Por favor insira um valor válido!') 
+
+def showSequence(sequence: List[float]):
+    for i, e in enumerate(sequence):
+        if i < len(sequence) - 1:
+            print(int(e) if e.is_integer() else e, end=' -> ')
         else:
-            return valor
+            print(int(e) if e.is_integer() else e, '-> Fim')
 
+# def subs(n):
+#     subs = {
+#         0: '\u2080', 
+#         1: '\u2081', 
+#         2: '\u2082', 
+#         3: '\u2083', 
+#         4: '\u2084', 
+#         5: '\u2085', 
+#         6: '\u2086',
+#         7: '\u2087',
+#         8: '\u2088',
+#         9: '\u2089',
+#     }
 
-def inteiro(n : float):
-    if n.is_integer():
-        n = int(n)
-        return n
-   
-    else:
-        n = f'{n:.2f}'
-        return n
+#     string = []
 
-
-def resposta():
-    res = str(input('Deseja realizar calcular novamente? [S/N]: ')).lower().strip()
-    if res != '':
-        res = res[0]
+#     if n > 9:
+#         n = integerFormat(n)
+#         n = str(n)
+#         for i in n:
+#             if i != '.':
+#                 i = subs.get(int(i))
+#             string.append(i)
+#         string = ''.join(string)
+#         return string
     
-    while res == '':
-        print('Opção inválida!')
-        res = str(input('Deseja realizar calcular novamente? [S/N]: ')).lower().strip()
-        while res not in 'sn':
-            print('Opção inválida!')
-            res = str(input('Deseja realizar calcular novamente? [S/N]: ')).lower().strip()
-            if res != '':
-                res = res[0]
+#     return subs.get(n)
 
-    return res
+def integerFormat(n: float):
+    if n.is_integer():
+        return int(n)
+    return f'{n:.2f}'
 
-
-def limpar():
-    nome_so = os.name
-    if nome_so == 'nt':
+def clear():
+    if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
