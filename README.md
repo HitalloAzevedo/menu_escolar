@@ -6,6 +6,9 @@
  - Fibonacci
  - Progressão Aritmética
  - Progressão Geométrica
+   
+# Pré-requisitos
+Python versão 3 ou superior
 
 # Instalação
 ```
