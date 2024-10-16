@@ -121,6 +121,7 @@ def App():
                 print(f'Vértice da parábola (x, y): ({integerFormat(quadraticFunction.evalVertexX())}, {integerFormat(quadraticFunction.evalVertexY())})')
 
                 input('\n<< pressione enter para retornar ao menu >>')
+            
             case 6:
                 drawHeader([(True, 'Logaritmo')])
                 print('Informe o valor da (base): ', end='')
@@ -134,10 +135,9 @@ def App():
                 print(f'Log de {integerFormat(n)} na base {integerFormat(base)} é {integerFormat(log.getLogarithm())}')
 
                 input('\n<< pressione enter para retornar ao menu >>')
+            
             case _:
                 pass
-
-
 
 if __name__ == '__main__':
     App()
