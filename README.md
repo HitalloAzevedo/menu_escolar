@@ -6,6 +6,7 @@
  - Fibonacci
  - Progressão Aritmética
  - Progressão Geométrica
+ - Dispersão
    
 # Pré-requisitos
 Python versão 3 ou superior
