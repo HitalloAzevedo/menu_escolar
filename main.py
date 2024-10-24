@@ -18,6 +18,7 @@ def App():
             'Função Primeiro Grau',
             'Função Segundo Grau',
             'Logaritmo',
+            'Medidas de Dispersão',
             'SAIR'
         )
 
@@ -134,6 +135,27 @@ def App():
                 drawHeader([(True, 'Resultados')], clearTerminal=False)
                 print(f'Log de {integerFormat(n)} na base {integerFormat(base)} é {integerFormat(log.getLogarithm())}')
 
+                input('\n<< pressione enter para retornar ao menu >>')
+            
+            case 7:
+                drawHeader([(True, 'Dispersão')])
+                print('Informa os valores separados por espaço. Ex: 1 2 3')
+                print('>>> ', end='')
+                numbers = list()
+                [numbers.append(float(i)) for i in input().strip().split(' ')]
+
+                dispersion = Dispersion(numbers)
+
+                print('Média:', dispersion.average())
+                print('Amplitude:', dispersion.spread())
+                print('Desvio:', dispersion.deviation())
+                print('Desvio Absoluto:', dispersion.absolute_deviation())
+                print('Desvio Médio Absoluto:', dispersion.absolute_mean_deviation())
+                print('Variância', dispersion.variance())
+                print('Desvio Padrão', dispersion.standard_deviation())
+                print('Variância Viciada:',dispersion.biased_variance())
+                print('Desvio padrão Viciado:', dispersion.biased_standard_deviation())
+                
                 input('\n<< pressione enter para retornar ao menu >>')
             
             case _:

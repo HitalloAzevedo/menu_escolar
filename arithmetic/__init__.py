@@ -1,3 +1,5 @@
+from math import sqrt
+
 class QuadraticFunction:
     def __init__(self, a: float, b: float, c: float): 
         self.a = a
@@ -115,3 +117,39 @@ class ArithmeticProgression():
     def getTermValue(self, index):
         return self.a1 + (index - 1) * self.r
 
+class Dispersion():
+    def __init__(self, numbers_set):
+        self.numbers = numbers_set
+    
+    def average(self):
+        return sum(self.numbers) / len(self.numbers)
+    
+    def deviation(self):
+        avg = self.average()
+        return [i - avg for i in self.numbers]
+    
+    def squared_deviation(self):
+        return [i*i for i in self.deviation()]
+    
+    def variance(self):
+        return sum(self.squared_deviation()) / (len(self.squared_deviation()) - 1)
+    
+    def biased_variance(self):
+        return sum(self.squared_deviation()) / len(self.squared_deviation())
+    
+    def standard_deviation(self):
+        return sqrt(self.variance())
+
+    def biased_standard_deviation(self):
+        return sqrt(self.biased_variance())
+    
+    def spread(self):
+        ceil = max(self.numbers)
+        floor = min(self.numbers)
+        return ceil - floor
+
+    def absolute_deviation(self):
+        return [abs(i) for i in self.deviation()]
+    
+    def absolute_mean_deviation(self):
+        return sum(self.absolute_deviation()) / len(self.deviation())
