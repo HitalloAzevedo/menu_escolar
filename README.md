@@ -16,13 +16,13 @@ Durante meu ensino médio, eu tive aulas de estatística e probabilidade, e como
 #### Pré-requisitos
 Python versão 3 ou superior
 
-# Instalação
+### Instalação
 ```
 git clone https://github.com/hitalloazevedo/num-buddy
 cd num-buddy
 ```
 
-# Como executar?
+### Como executar?
 ```
 python3 main.py
 ```
